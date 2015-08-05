@@ -3,6 +3,9 @@ Merge all kinds of uboot version to only one
 
 Build Method:
 
+first "cd iTop4412_uboot" source path:
+
+
 1 CPU:SCP DDR:1G CoreBoard:
 
 linux or android OS
