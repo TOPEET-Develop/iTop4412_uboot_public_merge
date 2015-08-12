@@ -234,8 +234,14 @@ static int display_dram_config (void)
 
 	size += 0x100000;
 #endif
-	puts("DRAM:	");
+
+#if defined(CONFIG_POP_2GDDR) || defined(CONFIG_POP_2GDDR_Ubuntu) 
+	puts("DRAM: ");
+    puts("2G\n");
+#else
+  	puts("DRAM:	");
 	print_size(size, "\n");
+#endif
 #endif
 
 	return (0);

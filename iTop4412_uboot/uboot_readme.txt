@@ -1,3 +1,6 @@
+2015-08-12
+1 Merge POP 2G DDR Uboot version to Main Version
+2 Build Method: ./build_uboot.sh POP_2GDDR  for linux&Android OS,  ./build_uboot.sh POP_2GDDR_Ubuntu for Ubuntu12.04 ARM Version.
 
 2015-08-05:DiGuang
 1 Merge kinds of uboot version to only one 

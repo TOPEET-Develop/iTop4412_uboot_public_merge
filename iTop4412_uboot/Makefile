@@ -3250,13 +3250,13 @@ itop_4412_android_config_pop_2GDDR:		unconfig
 	@$(MKCONFIG) $(@:_config=) arm arm_cortexa9 smdkc210 samsung s5pc210 POP_2GDDR
 
 #add by cym 20131206,change by dg 2015-08-04 for ubuntu
-itop_4412_android_ubuntu_config_scp_1GDDR:	unconfig
+itop_4412_ubuntu_config_scp_1GDDR:	unconfig
 	@$(MKCONFIG) $(@:_config=) arm arm_cortexa9 smdkc210 samsung s5pc210 SCP_1GDDR_Ubuntu
-itop_4412_android_ubuntu_config_scp_2GDDR:	unconfig
+itop_4412_ubuntu_config_scp_2GDDR:	unconfig
 	@$(MKCONFIG) $(@:_config=) arm arm_cortexa9 smdkc210 samsung s5pc210 SCP_2GDDR_Ubuntu
-itop_4412_android_ubuntu_config_pop_1GDDR:	unconfig
+itop_4412_ubuntu_config_pop_1GDDR:	unconfig
 	@$(MKCONFIG) $(@:_config=) arm arm_cortexa9 smdkc210 samsung s5pc210 POP_1GDDR_Ubuntu
-itop_4412_android_ubuntu_config_pop_2GDDR:	unconfig
+itop_4412_ubuntu_config_pop_2GDDR:	unconfig
 	@$(MKCONFIG) $(@:_config=) arm arm_cortexa9 smdkc210 samsung s5pc210 POP_2GDDR_Ubuntu
 #end add
 

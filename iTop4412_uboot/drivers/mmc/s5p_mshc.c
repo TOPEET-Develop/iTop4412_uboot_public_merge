@@ -133,10 +133,8 @@ static int mshci_reset_all(struct mshci_host *host)
 		if (count == 0) {
 			printf("Controller never released \
 				data0 before reset ciu.\n");
-#if  defined(CONFIG_SCP_1GDDR) ||  defined(CONFIG_SCP_2GDDR) || defined(CONFIG_SCP_1GDDR_Ubuntu) || defined(CONFIG_SCP_2GDDR_Ubuntu)  //add by dg
 
 			do_reset (NULL, 0, 0, NULL);
-#endif
 			
 			return -1;
 		}

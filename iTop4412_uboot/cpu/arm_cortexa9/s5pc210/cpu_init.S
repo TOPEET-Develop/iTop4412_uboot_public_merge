@@ -1,1 +1,1 @@
-/media/work/SourceMerge/uboot/Merge/iTop4412_uboot/cpu/arm_cortexa9/s5pc210/cpu_init_POP.S
+/media/work/SourceMerge/uboot/iTop4412_uboot/iTop4412_uboot/cpu/arm_cortexa9/s5pc210/cpu_init_POP.S

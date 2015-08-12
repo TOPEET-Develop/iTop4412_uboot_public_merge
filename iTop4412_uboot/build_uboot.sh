@@ -14,10 +14,15 @@ then
       sec_path="../CodeSign4SecureBoot_SCP/"
       CoreBoard_type="SCP"
 
-elif [ "$1" = "POP_1GDDR" ]  ||  [ "$1" = "POP_2GDDR" ] || [ "$1" = "POP_1GDDR_Ubuntu" ] ||  [ "$1" = "POP_2GDDR_Ubuntu" ]
+elif [ "$1" = "POP_1GDDR" ] || [ "$1" = "POP_1GDDR_Ubuntu" ]
 then
       sec_path="../CodeSign4SecureBoot_POP/"
       CoreBoard_type="POP"
+
+elif [ "$1" = "POP_2GDDR" ] ||  [ "$1" = "POP_2GDDR_Ubuntu" ]
+then
+     sec_path="../CodeSign4SecureBoot_POP/"
+     CoreBoard_type="POP2G"
 else
       echo "make config error,please use correct params......"
       exit 0
@@ -70,19 +75,19 @@ case "$1" in
 
                 elif [ "$1" = "SCP_1GDDR_Ubuntu" ]	
                 then
-                       make itop_4412_android_ubuntu_config_scp_1GDDR
+                       make itop_4412_ubuntu_config_scp_1GDDR
 
                 elif [ "$1" = "SCP_2GDDR_Ubuntu" ]
                 then
-                       make itop_4412_android_ubuntu_config_scp_2GDDR
+                       make itop_4412_ubuntu_config_scp_2GDDR
 
                 elif [ "$1" = "POP_1GDDR_Ubuntu" ]
                 then
-                       make itop_4412_android_ubuntu_config_pop_1GDDR
+                       make itop_4412_ubuntu_config_pop_1GDDR
 
                 elif [ "$1" = "POP_2GDDR_Ubuntu" ]
                 then
-                       make itop_4412_android_ubuntu_config_pop_2GDDR
+                       make itop_4412_ubuntu_config_pop_2GDDR
 		fi	
 		
 		make -j$CPU_JOB_NUM
@@ -108,11 +113,16 @@ case "$1" in
 
                 if  [ "$CoreBoard_type" = "SCP" ]
                 then
-		   cat E4412_N.bl1.SCP2G.bin bl2.bin all00_padding.bin u-boot.bin tzsw_SMDK4412_SCP_2GB.bin > u-boot-iTOP-4412.bin
+		        cat E4412_N.bl1.SCP2G.bin bl2.bin all00_padding.bin u-boot.bin tzsw_SMDK4412_SCP_2GB.bin > u-boot-iTOP-4412.bin
 
                 elif [ "$CoreBoard_type" = "POP" ]
                 then
                    cat E4412.S.BL1.SSCR.EVT1.1.bin E4412.BL2.TZ.SSCR.EVT1.1.bin all00_padding.bin u-boot.bin E4412.TZ.SSCR.EVT1.1.bin > u-boot-iTOP-4412.bin
+
+                elif [ "$CoreBoard_type" = "POP2G"  ]
+                then
+                   cat bl2.bin u-boot.bin E4412.TZ.SSCR.EVT1.1.bin > u-boot-iTOP-4412.bin
+
                 else
                    echo  "make uboot image error......" 
                 fi

@@ -140,16 +140,36 @@ int dram_init(void)
 			gd->bd->bi_dram[1].size = PHYS_SDRAM_2_SIZE;
 		}
 		else{//ly
-			printf("POP for C220\n");
-			nr_dram_banks = 4;
-			gd->bd->bi_dram[0].start = PHYS_SDRAM_1;
-			gd->bd->bi_dram[0].size = PHYS_SDRAM_1_SIZE;
-			gd->bd->bi_dram[1].start = PHYS_SDRAM_2;
-			gd->bd->bi_dram[1].size = PHYS_SDRAM_2_SIZE;
-			gd->bd->bi_dram[2].start = PHYS_SDRAM_3;
-			gd->bd->bi_dram[2].size = PHYS_SDRAM_3_SIZE;
-			gd->bd->bi_dram[3].start = PHYS_SDRAM_4;
-			gd->bd->bi_dram[3].size = PHYS_SDRAM_4_SIZE;
+                    printf("POP for C220\n");
+
+#if defined(CONFIG_POP_2GDDR) || defined(CONFIG_POP_2GDDR_Ubuntu)
+                    nr_dram_banks = 8;
+#else
+                    nr_dram_banks = 4;
+#endif
+
+                    gd->bd->bi_dram[0].start = PHYS_SDRAM_1;
+                    gd->bd->bi_dram[0].size = PHYS_SDRAM_1_SIZE;
+                    gd->bd->bi_dram[1].start = PHYS_SDRAM_2;
+                    gd->bd->bi_dram[1].size = PHYS_SDRAM_2_SIZE;
+                    gd->bd->bi_dram[2].start = PHYS_SDRAM_3;
+                    gd->bd->bi_dram[2].size = PHYS_SDRAM_3_SIZE;
+                    gd->bd->bi_dram[3].start = PHYS_SDRAM_4;
+                    gd->bd->bi_dram[3].size = PHYS_SDRAM_4_SIZE;
+
+#if defined(CONFIG_POP_2GDDR) || defined(CONFIG_POP_2GDDR_Ubuntu)
+
+                    gd->bd->bi_dram[4].start = PHYS_SDRAM_5;
+                    gd->bd->bi_dram[4].size = PHYS_SDRAM_5_SIZE;
+                    gd->bd->bi_dram[5].start = PHYS_SDRAM_6;
+                    gd->bd->bi_dram[5].size = PHYS_SDRAM_6_SIZE;
+                    gd->bd->bi_dram[6].start = PHYS_SDRAM_7;
+                    gd->bd->bi_dram[6].size = PHYS_SDRAM_7_SIZE;
+                    gd->bd->bi_dram[7].start = PHYS_SDRAM_8;
+                    gd->bd->bi_dram[7].size = PHYS_SDRAM_8_SIZE;
+
+#endif
+			
 		}
 #else
 		nr_dram_banks = 2;
