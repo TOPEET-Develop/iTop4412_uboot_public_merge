@@ -1,1 +1,1 @@
-/media/work/SourceMerge/uboot/iTop4412_uboot/iTop4412_uboot/board/samsung/smdkc210/lowlevel_init_POP.S
+/media/data/GitHub/iTop4412_uboot_public_merge/iTop4412_uboot/board/samsung/smdkc210/lowlevel_init_POP.S

@@ -1,1 +1,1 @@
-/media/work/SourceMerge/uboot/iTop4412_uboot/iTop4412_uboot/cpu/arm_cortexa9/s5pc210/cpu_init_POP.S
+/media/data/GitHub/iTop4412_uboot_public_merge/iTop4412_uboot/cpu/arm_cortexa9/s5pc210/cpu_init_POP.S
