@@ -218,7 +218,11 @@ void PMIC_InitIp(void)
 	    else if(id == 0x3
 				/*add by cym 20130316 */
 			|| (0x5 == id)
-			/* end add */)
+			/* end add */
+			/* add by cym 20151111 */
+			|| (21 == id)
+			/* end add */
+			)
     {
             
 		printf("S5M8767(VER5.0)\n");
@@ -227,7 +231,14 @@ void PMIC_InitIp(void)
 
 	else
 	{
+/* modeify by cym 20151111 */
+#if 0
 	  printf("Pls check the i2c @ pmic, id = %d,error\n",id);
+#else
+	printf("S5M8767(VER6.0)\n");
+	Is_TC4_Dvt = 2;
+#endif
+/* end modify */
 	}
 	//PowerOn the LCD In Kernel.
 	//val = 0x7;
@@ -276,6 +287,10 @@ void PMIC_InitIp(void)
 	Outp32(GPX0CON,(Inp32(GPX0CON)&(~(0xf << 12)))|(0x1 << 12));
         Outp32(GPX0DAT,(Inp32(GPX0DAT)&(~(0x1 << 3)))|(0x0 << 3));
 	/* end add */
+
+	/* add by cym 20150701 7 inch screen twinkle when syatem start */
+        Outp32(GPL1DRV,(Inp32(GPL1DRV)&(~(0x3)))|(0x2));
+        /* end add */
 #endif
 }
 
